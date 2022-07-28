@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 
             println(API_KEY)
+            val sp = getSharedPreferences("","")
 
 
 

@@ -26,3 +26,4 @@ interface RetrofitInterface {
         @Query("apikey") apikey:String?
                         ):Call<CharAdapter>
 }
+
