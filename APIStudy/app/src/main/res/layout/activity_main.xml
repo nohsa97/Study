@@ -40,6 +40,7 @@
             android:id="@+id/out1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="serverList"
             android:text="서버" />
 
         <TextView
@@ -64,7 +65,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 

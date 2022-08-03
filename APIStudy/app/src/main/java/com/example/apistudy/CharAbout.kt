@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName
 
 data class CharAbout (
         @SerializedName("serverId")
-        val serverId : String,
+        var serverId : String,
         @SerializedName("characterId")
-        val charId : String,
+        var charId : String,
         @SerializedName("characterName")
-        val charName: String,
+        var charName: String,
         @SerializedName("jobGrowName")
-        val jobGrowName : String
+        var jobGrowName : String
         )
 

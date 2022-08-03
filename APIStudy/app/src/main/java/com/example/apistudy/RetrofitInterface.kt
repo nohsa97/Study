@@ -22,11 +22,11 @@ interface RetrofitInterface {
         @Query("characterName")characterName:String?,
         @Query("apikey") apikey:String?
                         ):Call<CharAdapter>
-
-    @FormUrlEncoded
-    @POST
-    fun inputData (
-
-    )
+//
+//    @FormUrlEncoded
+//    @POST
+//    fun inputData (
+//
+//    )
 }
 

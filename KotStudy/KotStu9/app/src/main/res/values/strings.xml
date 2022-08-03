@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KotStu9</string>
+
+    <string name="opne">열기</string>
+    <string name="close">닫기</string>
+</resources>
