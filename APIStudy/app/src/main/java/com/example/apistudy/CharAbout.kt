@@ -1,6 +1,7 @@
 package com.example.apistudy
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class CharAbout (
         @SerializedName("serverId")
@@ -11,5 +12,5 @@ data class CharAbout (
         var charName: String,
         @SerializedName("jobGrowName")
         var jobGrowName : String
-        )
+        ) : Serializable
 

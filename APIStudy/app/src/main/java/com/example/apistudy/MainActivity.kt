@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         var userData  = HashMap<String,String>()
         var userID:String? = null
+        var data = CharAbout("","","","")
 
 
         val API_KEY = getString(R.string.API_KEY)
@@ -186,8 +187,7 @@ class MainActivity : AppCompatActivity() {
                                 userData["charName"] = uses!!.charName
                                 userData["jobGrowName"] = uses!!.jobGrowName
 
-
-
+                                data = CharAbout(uses!!.serverId,uses!!.charId,uses!!.charName,uses!!.jobGrowName)
                             }
 
 
@@ -213,10 +213,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this,"캐릭터 설정을 해주세요",Toast.LENGTH_SHORT).show()
             }
             else {
-                val intent = Intent(this, nextPage::class.java)
-                println("넘긴다 ${userData["charName"]}")
-                intent.putExtra("charName", userData["charName"])
-                startActivity(intent)
+                val intent1 = Intent(this, nextPage::class.java)
+
+
+                intent1.putExtra("charName", userData["charName"])
+                intent1.putExtra("charData", data)
+
+                startActivity(intent1)
             }
         }
 
