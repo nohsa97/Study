@@ -23,7 +23,12 @@ interface RetrofitInterface {
         @Query("apikey") apikey:String?
                         ):Call<CharAdapter>
 
-//    @GET("")
+    @GET("/df/servers/{serverId}/characters/{characterId}/equip/equipment")
+    fun getEqui(
+        @Path("serverId")serverId: String?,
+        @Path("characterId")charaterId:String?,
+        @Query("apikey") apikey:String?
+    ):Call<CharAbout_Equi>
 //
 //    @FormUrlEncoded
 //    @POST

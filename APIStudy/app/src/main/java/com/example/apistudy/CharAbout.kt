@@ -11,6 +11,6 @@ data class CharAbout (
         @SerializedName("characterName")
         var charName: String,
         @SerializedName("jobGrowName")
-        var jobGrowName : String
+        var jobGrowName : String,
         ) : Serializable
 

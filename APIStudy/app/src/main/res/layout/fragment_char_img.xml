@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CFA5A5"
-    tools:context=".charImg">
+    tools:context=".charImg_Frag">
 
     <LinearLayout
         android:layout_width="match_parent"

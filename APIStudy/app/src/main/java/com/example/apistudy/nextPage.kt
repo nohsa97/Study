@@ -1,12 +1,8 @@
 package com.example.apistudy
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_next_page.*
-import kotlinx.android.synthetic.main.fragment_char_img.*
-import org.w3c.dom.Text
 
 class nextPage : AppCompatActivity() {
 
@@ -37,7 +33,7 @@ class nextPage : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.tap1 -> {
                         with(supportFragmentManager.beginTransaction()) {
-                            val seltFragment = charImg()
+                            val seltFragment = charImg_Frag()
                             seltFragment.arguments = bundle
                             replace(R.id.container, seltFragment)
                         }.commit()
@@ -45,7 +41,7 @@ class nextPage : AppCompatActivity() {
                     }
                     R.id.tap2 -> {
                         with(supportFragmentManager.beginTransaction()) {
-                            val seltFragment = charEqui()
+                            val seltFragment = charEqui_Frag()
                             seltFragment.arguments = bundle
                             replace(R.id.container, seltFragment)
                         }.commit()
@@ -53,7 +49,7 @@ class nextPage : AppCompatActivity() {
                     }
                     R.id.tap3 -> {
                         with(supportFragmentManager.beginTransaction()) {
-                            val seltFragment = charInfo()
+                            val seltFragment = charInfo_Frag()
                             replace(R.id.container, seltFragment)
                         }.commit()
 
