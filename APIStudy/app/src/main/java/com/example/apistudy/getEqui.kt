@@ -28,8 +28,8 @@ class getEqui {
                     val equime = response.body()?.equipment?.map {
                         equipment(
                             it.itemName,
-                            it.itemId,
-                            it.itemType
+                            it.itemType,
+                            it.itemId
                         )
                     }
                     for(item in equime!!) {
