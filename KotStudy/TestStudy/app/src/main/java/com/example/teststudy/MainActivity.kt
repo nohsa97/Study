@@ -24,14 +24,20 @@ class MainActivity : AppCompatActivity() {
         val sp = getSharedPreferences("테스트", MODE_PRIVATE)
 
         sp.edit().putString("id","nohsa97")
+
         sp.edit().putString("pass","1234")
         sp.edit().apply()
+        var ass = "nobody"
+
+        let
+
 
 
 
         button.setOnClickListener {
             println(post)
             println(post2)
+            println(ass != null)
 
            Log.d("로그확인 ","저장된 아디" + sp.getString("id","aa"))
            Log.d("로그확인 ","저장된 아디" + sp.getString("pass","aa"))
