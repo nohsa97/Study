@@ -112,36 +112,36 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        button.setOnClickListener {
-
-           service.getServer(API_KEY)?.enqueue(object : Callback<ServerList> {
-               override fun onResponse(call: Call<ServerList>, response: Response<ServerList>) {
-                   if(response.isSuccessful) {
-                       var sl  = response.body().toString()
-                       var ss = response.body()?.serverList?.map {
-                           Server(
-                               it.ServerID,
-                               it.ServerName
-                           )
-                       } // 서버를 하나의 데이터 클래스로 초기화
-
-                    for (item in ss!!) {
-                        println("${item.ServerID}는 한글로 ${item.ServerName}")
-                    } //널이면 안되니까 !!
-
-
-                   }
-                   else {
-                       println("실패")
-                   }
-               }
-
-               override fun onFailure(call: Call<ServerList>, t: Throwable) {
-
-                   println("서버 동기화 실패")
-               }
-           })
-        }
+//        button.setOnClickListener {
+//
+////           service.getServer(API_KEY)?.enqueue(object : Callback<ServerList> {
+////               override fun onResponse(call: Call<ServerList>, response: Response<ServerList>) {
+////                   if(response.isSuccessful) {
+////                       var sl  = response.body().toString()
+////                       var ss = response.body()?.serverList?.map {
+////                           Server(
+////                               it.ServerID,
+////                               it.ServerName
+////                           )
+////                       } // 서버를 하나의 데이터 클래스로 초기화
+////
+////                    for (item in ss!!) {
+////                        println("${item.ServerID}는 한글로 ${item.ServerName}")
+////                    } //널이면 안되니까 !!
+////
+////
+////                   }
+////                   else {
+////                       println("실패")
+////                   }
+////               }
+////
+////               override fun onFailure(call: Call<ServerList>, t: Throwable) {
+////
+////                   println("서버 동기화 실패")
+////               }
+////           })
+//        }
 
         button2.setOnClickListener {
             userID = inputName.text.toString()
@@ -149,6 +149,8 @@ class MainActivity : AppCompatActivity() {
             {
                 Toast.makeText(this,"캐릭터 설정을 해주세요",Toast.LENGTH_SHORT).show()
             }
+
+
 
             else {
                 val slss = resources.getStringArray(R.array.serverName)

@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class equipment (
     @SerializedName("itemName")
-    val itemName : String?,
+    var itemName : String?,
     @SerializedName("itemType")
-    val itemType : String?,
+    var itemType : String?,
     @SerializedName("itemId")
-    val itemId : String?
+    var itemId : String?
         )

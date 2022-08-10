@@ -35,6 +35,9 @@ class charEqui_Frag : Fragment() {
         var userEqui = getEqui()
         userEqui.getEquiment()
 
+//        var userE : List<equipment> = userEqui.returnEqui()
+
+
 
 
         return view2

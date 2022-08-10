@@ -7,9 +7,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class getEqui {
-    val itemName : String? = null
-    val itemID : String? = null
+
+
+
+
     val API_KEY = "ftGps3IDmP4kuCOlYx0yy19xm9BV3VR8"
+
 
     val retrofit = Retrofit.Builder()
         .baseUrl("https://api.neople.co.kr")
@@ -19,22 +22,19 @@ class getEqui {
 
     fun getEquiment() {
         service.getEqui("cain","ea0ad6c1a617d19091a58ab4138e4995",API_KEY)?.enqueue(object :Callback<CharAbout_Equi>{
-            override fun onResponse(
+            override fun onResponse (
                 call: Call<CharAbout_Equi>,
                 response: Response<CharAbout_Equi>
             ) {
                 if(response.isSuccessful){
                     val body = response.body()?.toString()
-                    val equime = response.body()?.equipment?.map {
-                        equipment(
-                            it.itemName,
-                            it.itemType,
-                            it.itemId
-                        )
+
+                    val userEqui = response.body()?.equipment!!
+
+                    for(item in userEqui) {
+                        println("${item.itemName}이랑 아디는 ${item.itemId}")
                     }
-                    for(item in equime!!) {
-                       println("${item.itemName}이랑 아디는 ${item.itemId}")
-                    }
+
 
                 }
                 else {
@@ -42,11 +42,16 @@ class getEqui {
                 }
             }
 
+
+
             override fun onFailure(call: Call<CharAbout_Equi>, t: Throwable) {
                 TODO("Not yet implemented")
             }
         })
+
+
     }
+
 
 
 }
