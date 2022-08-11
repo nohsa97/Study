@@ -88,7 +88,10 @@ body {
     -moz-transition: none !important;
     -webkit-transition: none !important;
     -ms-transition: none !important;
-    transition: none !important; }
+    transition: none !important; 
+  }
+
+  
 
 /* Type */
 body, input, select, textarea {
@@ -112,12 +115,11 @@ a {
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  border-bottom: dotted 1px;
-  color: #f56a6a;
+  color: #000000;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #f56a6a;
-    color: #f56a6a !important; }
+    border-bottom-color: #000000;
+    color: #000000 !important; }
     a:hover strong {
       color: inherit; }
 
@@ -1345,7 +1347,11 @@ ul.actions {
 /* Icons */
 ul.icons {
   cursor: default;
+  display: block;
+  text-align: right;
   list-style: none;
+  padding: 10px;
+  margin-left: 10px;
   padding-left: 0; }
   ul.icons li {
     display: inline-block;
@@ -2084,7 +2090,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  border-bottom: solid 5px #7eabee;
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2102,7 +2108,7 @@ button,
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
-      padding-top: 5em; } }
+      padding-top: 2em; } }
   @media screen and (max-width: 736px) {
     #header {
       padding-top: 6.5em; }
@@ -2288,6 +2294,7 @@ button,
       padding-left: 15px;
       margin-right: auto;
       margin-left: auto;
+     
     }
     @media (min-width: 768px) {
       .container {
@@ -2312,13 +2319,17 @@ button,
     }
 
     .mainBorder {
+      float: left;
+      width: 30%;
       border: 2px solid #819fea; 
-      background-color: #e3ffff; 
-      border-radius: 10px;
-      margin: 15px;
+    background-color: #e3ffff; 
+    border-radius: 10px;
+    margin: 15px;
   
   }
   
   .mainBorder h2 , .mainBorder h3 {
       text-align: center;
   }
+
+  
