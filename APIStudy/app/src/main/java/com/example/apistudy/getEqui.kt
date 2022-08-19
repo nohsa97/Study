@@ -1,5 +1,7 @@
 package com.example.apistudy
 
+import android.content.Intent
+import android.os.Bundle
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,6 +36,13 @@ class getEqui {
                     for(item in userEqui) {
                         println("${item.itemName}이랑 아디는 ${item.itemId}")
                     }
+
+
+                    val bundle = Bundle()
+                    bundle.putString("itemId",userEqui[0].itemId)
+                    bundle.putString("itemName",userEqui[0].itemName)
+                    val seltFragment = charEqui_Frag()
+                    seltFragment.arguments = bundle
 
 
                 }

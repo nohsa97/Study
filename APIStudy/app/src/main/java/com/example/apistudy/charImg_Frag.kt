@@ -22,6 +22,7 @@ class charImg_Frag : Fragment() {
         var userName = arguments?.getString("name")
         var userJob = arguments?.getString("job")
         var userCharId = arguments?.getString("id")
+
         val url = "https://img-api.neople.co.kr/df/servers/${userServer}/characters/${userCharId}?zoom=1"
         val default = R.drawable.ic_launcher_foreground
         val view = inflater.inflate(R.layout.fragment_char_img, container, false)

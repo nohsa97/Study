@@ -25,10 +25,6 @@ class nextPage : AppCompatActivity() {
 
 
 
-
-
-
-
             menuBar.setOnItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.tap1 -> {
