@@ -20,7 +20,7 @@ public class q2805 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        ArrayList<Integer> arr = new ArrayList<>();
+        int [] arr = new int[N];
 
         s = bf.readLine();
         st = new StringTokenizer(s);
@@ -28,44 +28,62 @@ public class q2805 {
 
 
         for(int i=0; i<N;i++) {
-            arr.add(Integer.parseInt(st.nextToken()));
-            if(arrMax<arr.get(i))
-                arrMax=arr.get(i);
-
+            arr[i]=Integer.parseInt(st.nextToken());
+            if(arrMax<arr[i])
+                arrMax=arr[i];
         }
 
-//        for(int i=0 ; i<arrMax;i++){
-//            if((M==getResult(arr,i)) && MAX<getResult(arr,i)){
-//                MAX=i;
-//            }
-//        }
-        MAX = getMid(1,arrMax,arr,M);
+        MAX = getMid(0,arrMax,arr,M);
 
         System.out.println(MAX);
 
     }
 
-    public static int getResult(ArrayList<Integer> arr,int M) {
-        int result=0;
-        for(Integer item : arr)
-            if(item-M > 0)
-                result += item-M;
-        return result;
-    }
 
-    public static int getMid(int low,int high,ArrayList<Integer> arr,int M) {
-        int mid = (low+high)/ 2;
-        if(getResult(arr,mid)>M){
-           return getMid(mid+1,high,arr,M);
+    public static int getMid(int low,int high,int[] arr,int M) {
+        while(low<=high){
+            int mid = (low+high)/2;
+            long sum=0;
+            for(int item : arr)
+                if(item-mid>0)
+                    sum += (item-mid);
+            if(sum>=M)
+                low=mid+1;
+            else
+                high=mid-1;
         }
-        else if (getResult(arr,mid)<M){
-           return getMid(low,mid,arr,M);
-        }
-        else if(getResult(arr,mid)==M)
-            return mid;
-        return -1;
+        return high;
     }
 }
 
 // 20 15 10 17
 // 10    10  5 0 7  22 >
+
+//    public static int getMid(int low,int high,int[] arr,int M) {
+//        int mid = 0;
+////        if(getResult(arr,mid)>M){
+////           return getMid(mid+1,high,arr,M);
+////        }
+////        else if (getResult(arr,mid)<M){
+////           return getMid(low,mid,arr,M);
+////        }
+////        else if(getResult(arr,mid)==M)
+////            return mid;
+////        return -1;
+//        while(low<=high){
+//            int sum  = 0;
+//            for(Integer item : arr)
+//                if(item-mid > 0)
+//                    sum += item-mid;
+//            if(sum>=M){
+//                low = mid+1;
+//            }
+//            else {
+//                high = mid-1;
+//            }
+//            mid = (high+low)/2;
+//        }
+//        return mid;
+//
+//    }
+//}
